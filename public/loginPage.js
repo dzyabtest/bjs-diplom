@@ -9,7 +9,8 @@ userForm.loginFormCallback = data => {
             location.reload();
         }
         else {
-            alert('Неправильный логин или пароль!');
+//            alert('Неправильный логин или пароль!');
+            userForm.setLoginErrorMessage('Неправильный логин или пароль!');
         }
     });
 
@@ -22,7 +23,8 @@ userForm.registerFormCallback = data => {
             location.reload();
         }
         else {
-            alert('Неправильный логин или пароль!');
+//            alert('Неправильный логин или пароль!');
+            userForm.setRegisterErrorMessage('Неправильный логин или пароль!');
         }
     });
 

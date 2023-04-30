@@ -31,7 +31,7 @@ function getRates() {
     });
 }
 
-const rateInterval = setInterval(getRates(), 60000);
+const rateInterval = setInterval(getRates, 60000);
 
 let money = new MoneyManager();
 let favor = new FavoritesWidget();
@@ -51,10 +51,10 @@ money.addMoneyCallback = (data) => {
             if (res.success) {
                 let data = res.data;
                 ProfileWidget.showProfile(data);
-                favor.setMessage(true, 'Деньги зачислены.');
+                money.setMessage(true, 'Деньги зачислены.');
             }
             else {
-                favor.setMessage(false, res.error);
+                money.setMessage(false, res.error);
             }
         });  
     }
@@ -66,10 +66,10 @@ money.conversionMoneyCallback = (data) => {
             if (res.success) {
                 let data = res.data;
                 ProfileWidget.showProfile(data);
-                favor.setMessage(true, 'Конвертация выполнена.');
+                money.setMessage(true, 'Конвертация выполнена.');
             }
             else {
-                favor.setMessage(false, res.error);
+                money.setMessage(false, res.error);
             }
         });  
     }
@@ -80,10 +80,10 @@ money.sendMoneyCallback = (data) => {
         if (res.success) {
             let data = res.data;
             ProfileWidget.showProfile(data);
-            favor.setMessage(true, 'Перевод выполнен.');
+            money.setMessage(true, 'Перевод выполнен.');
         }
         else {
-            favor.setMessage(false, res.error);
+            money.setMessage(false, res.error);
         }
     });  
 
